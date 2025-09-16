@@ -30,7 +30,7 @@ jobs:
       - name: Deploy to Salesforce and show test results
         run: |
           sf project deploy start --source-dir force-app --test-level RunLocalTests --json > deploy-result.json
-          cat deploy-result.json
+          cat deploy-result.json 
 on:    
   push:
     branches: [ main ]
