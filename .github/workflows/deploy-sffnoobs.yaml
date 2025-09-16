@@ -27,6 +27,10 @@ jobs:
           echo "${{ secrets.JWT_SERVER_KEY }}" > server.key
           sf org login jwt --username ${{ secrets.DEPLOYMENT_USER_NAME }} --jwt-key-file server.key --client-id ${{ secrets.CONSUMER_KEY }} --instance-url ${{ vars.INSTANCE_URL }} --set-default
           sf project deploy start --source-dir changed-sources/force-app --test-level RunLocalTests
+      - name: Deploy to Salesforce and show test results
+        run: |
+          sf project deploy start --source-dir force-app --test-level RunLocalTests --json > deploy-result.json
+          cat deploy-result.json
 on:    
   push:
     branches: [ main ]
