@@ -6,7 +6,7 @@ const lwcConfig = require('@salesforce/eslint-config-lwc/recommended');
 const globals = require('globals');
 
 module.exports = defineConfig([
-    // Aura configuration
+    // Aura configuration 
     {
         files: ['**/aura/**/*.js'],
         extends: [
