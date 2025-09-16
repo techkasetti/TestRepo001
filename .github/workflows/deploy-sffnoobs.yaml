@@ -2,7 +2,7 @@ jobs:
   Deploy-to-sffnoobs-environment:
     runs-on: ubuntu-latest
     environment: sffnoobs
-    steps:
+    steps: 
       - uses: actions/setup-node@v3
         with:
           node-version: '18'
